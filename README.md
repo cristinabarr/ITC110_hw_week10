@@ -8,3 +8,19 @@ Have the program rename all the later files to close this gap.
 As an added challenge, 
 write another program that can insert gaps into numbered files so that a new file can be added.
 
+files = []
+for filename in os.listdir(folder):
+    files = files + [filename]
+files.sort(key=natural_keys)
+num = 0
+for each in files:
+    num = num + 1
+    if len(each) - len(filepre) ==  5:
+        suff = filepre + str(num) + '.txt'
+    if len(each) - len(filepre) ==  6:
+        suff = filepre + str(num) + '.txt'
+    if len(each) - len(filepre) ==  7:
+        suff = filepre + str(num) + '.txt'
+    if not each == suff:
+        os.rename(each, suff)
+print('Done')
