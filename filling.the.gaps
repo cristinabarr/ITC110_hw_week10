@@ -4,19 +4,6 @@ As an added challenge, write another program that can insert gaps into numbered 
 
 import os, re
 
-def atoi(text):
-    return int(text) if text.isdigit() else text
-
-def natural_keys(text):
-    '''
-    alist.sort(key=natural_keys) sorts in human order
-    http://nedbatchelder.com/blog/200712/human_sorting.html
-    (See Toothy's implementation in the comments)
-    '''
-    return [ atoi(c) for c in re.split('(\d+)', text) ]
-
-#The above functions are not my creation, but natural_keys really helps
-#when trying to sort file names that contain numbers.
 
 print('Enter folder you wish to work with, ending with a "\\" character.')
 folder = input()
