@@ -8,6 +8,27 @@ Have the program rename all the later files to close this gap.
 As an added challenge, 
 write another program that can insert gaps into numbered files so that a new file can be added.
 
+import os, re
+import os, re
+
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    http://nedbatchelder.com/blog/200712/human_sorting.html
+    (See Toothy's implementation in the comments)
+    '''
+    return [ atoi(c) for c in re.split('(\d+)', text) ]
+
+
+print('Enter folder you wish to work with, ending with a "\\" character.')
+folder = input()
+print('Enter the file prefix you would like to use: ')
+filepre = input()
+os.chdir(folder)
+
 files = []
 for filename in os.listdir(folder):
     files = files + [filename]
